@@ -1,0 +1,12 @@
+{% if messages %}
+    {%for message in messages %}
+        <div class="alert {{message.tags}}">{{message}}</div>
+    {% endfor %}
+{% endif %}
+<form method="POST" action="{% url 'cadastro' %}">
+    {% csrf_token %}
+    <input type="text" placeholder="NOME" name="nome" required>
+    <input type="password" placeholder="SENHA" name="senha" required>
+    <input type="password" placeholder="CONFIRMAR SENHA" name="confirmar_senha" required>
+    <button type="submit">CADASTRAR</button>
+</form>       

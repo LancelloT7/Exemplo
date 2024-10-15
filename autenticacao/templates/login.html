@@ -1,0 +1,15 @@
+{% for message in messages %}
+    <div class="alert alert-danger">
+        {{ message }}
+    </div>
+{% endfor %}
+<form method="POST" action="{% url 'login' %}">{% csrf_token %}
+
+    <input type="text" placeholder="LOGIN" name="login">
+    <input type="password" placeholder="SENHA" name="senha">
+    <button type="submit">Entrar</button>
+
+
+   
+
+</form>    
